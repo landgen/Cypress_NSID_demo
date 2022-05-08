@@ -26,11 +26,11 @@
 
 Cypress.Commands.add("clickRecaptcha", () => {
   cy.window().then(win => {
-    console.log(win.document)
+    cy.wait(800);
     win.document
       .querySelector("iframe[src*='recaptcha']")
       .contentDocument.getElementById("recaptcha-token")
       .click();
-    cy.wait(500);
+    cy.wait(800);
   });
 });
